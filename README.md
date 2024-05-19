@@ -4,4 +4,4 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/niko-olas/Modular.Monolithic.Architecture.Helper/blob/master/LICENSE)
 
 
-A small library to improve and simplify the development of applications based on the Modular Monolith architecture
+A small library to improve and simplify the development of applications based on the Modular Monolith architecture.
