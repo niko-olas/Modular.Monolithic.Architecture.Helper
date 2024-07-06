@@ -36,7 +36,7 @@ namespace Modular.Monolithic.Architecture.Helper.Domain.Errors
         /// </summary>
         public string Message { get; }
 
-        public override string ToString() =>   $"{Code}: {Message}";
+        public override string ToString() => $"{Code}: {Message}";
 
         /// <inheritdoc />
         protected override IEnumerable<object> GetValues()

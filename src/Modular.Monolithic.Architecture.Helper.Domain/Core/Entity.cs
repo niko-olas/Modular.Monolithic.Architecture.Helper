@@ -17,7 +17,7 @@ namespace Modular.Monolithic.Architecture.Helper.Domain.Core
         /// <summary>
         /// Domain events occurred.
         /// </summary>
-        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents?.AsReadOnly();   
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents?.AsReadOnly();
         /// <summary>
         /// Initializes a new instance of the <see cref="Entity"/> class.
         /// </summary>
