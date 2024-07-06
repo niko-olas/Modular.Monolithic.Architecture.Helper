@@ -6,7 +6,7 @@
       <Nullable>enable</Nullable>
       <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
       <LangVersion>latest</LangVersion>
-      <PackageId>Modular.Monolithic.Architecture.Helper.Domain</PackageId>
+      <PackageId>Niko_olas.ModularMonolith.Helper.Domain</PackageId>
       <Authors>Nicholas Gueli</Authors>
       <Company>Nicholas Gueli</Company>
       <Product>Library Modular Monolithic Architecture helper for domain layer</Product>
@@ -20,6 +20,7 @@
       <RepositoryUrl>https://github.com/niko-olas/Modular.Monolithic.Architecture.Helper.git</RepositoryUrl>
       <RepositoryBranch>master</RepositoryBranch>
       <PackageReadmeFile>README.md</PackageReadmeFile>
+      <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
