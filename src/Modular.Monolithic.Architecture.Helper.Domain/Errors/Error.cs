@@ -11,6 +11,11 @@ namespace Modular.Monolithic.Architecture.Helper.Domain.Errors
     public sealed class Error : ValueObject
     {
         /// <summary>
+        /// Gets the empty error instance.
+        /// </summary>
+        internal static Error None => new Error(string.Empty, string.Empty);
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Error"/> class.
         /// </summary>
         /// <param name="code">The error code.</param>
