@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Modular.Monolithic.Architecture.Helper.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.IAuditableEntity">
+            <summary>
+            Represents the marker interface for auditable entities.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.IAuditableEntity.CreatedOn">
+            <summary>
+            Gets the created on date and time in UTC format.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.IAuditableEntity.ModifiedOn">
+            <summary>
+            Gets the modified on date and time in UTC format.
+            </summary>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.ISoftDeletableEntity">
+            <summary>
+            Represents the marker interface for soft-deletable entities.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.ISoftDeletableEntity.DeletedOn">
+            <summary>
+            Gets the date and time in UTC format the entity was deleted on.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.ISoftDeletableEntity.Deleted">
+            <summary>
+            Gets a value indicating whether the entity has been deleted.
+            </summary>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase">
+            <summary>
+            Represents the id value entities.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase.Value">
+            <summary>
+            Gets or sets the entity identifier.
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase.op_Equality(Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase,Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase.IsTransient">
+            <inheritdoc />
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Abstractions.TypedIdValueBase.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Core.AggregateRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity">
+            <summary>
+            Represents the base class that all entities derive from.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity.DomainEvents">
+            <summary>
+            Domain events occurred.
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity"/> class.
+            </summary>
+            <remarks>
+            Required by EF Core.
+            </remarks>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity.AddDomainEvent(Modular.Monolithic.Architecture.Helper.Domain.Events.IDomainEvent)">
+            <summary>
+            
+            </summary>
+            <param name="eventItem"></param>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity.RemoveDomainEvent(Modular.Monolithic.Architecture.Helper.Domain.Events.IDomainEvent)">
+            <summary>
+            
+            </summary>
+            <param name="eventItem"></param>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity.ClearDomainEvents">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.Entity.CheckRule(Modular.Monolithic.Architecture.Helper.Domain.BusinessRules.IBusinessRule)">
+            <summary>
+            
+            </summary>
+            <param name="rule"></param>
+            <exception cref="T:Modular.Monolithic.Architecture.Helper.Domain.Exceptions.BusinessRuleValidationException"></exception>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Core.ValueObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.ValueObject.Equals(Modular.Monolithic.Architecture.Helper.Domain.Core.ValueObject)">
+            <inheritdoc />
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.ValueObject.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.ValueObject.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Core.ValueObject.GetValues">
+            <summary>
+            Gets the atomic values of the value object.
+            </summary>
+            <returns>The collection of objects representing the value object values.</returns>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Errors.Error">
+            <summary>
+            Represents a concrete domain error.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Errors.Error.None">
+            <summary>
+            Gets the empty error instance.
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Errors.Error.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Errors.Error"/> class.
+            </summary>
+            <param name="code">The error code.</param>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Errors.Error.Code">
+            <summary>
+            Gets the error code.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Errors.Error.Message">
+            <summary>
+            Gets the error message.
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Errors.Error.GetValues">
+            <inheritdoc />
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Events.IDomainEvent">
+            <summary>
+            Represents the interface for an event that is raised within the domain.
+            </summary>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Exceptions.DomainException">
+            <summary>
+            Represents an exception that occurred in the domain.
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Exceptions.DomainException.#ctor(Modular.Monolithic.Architecture.Helper.Domain.Errors.Error)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Exceptions.DomainException"/> class.
+            </summary>
+            <param name="error">The error containing the information about what happened.</param>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Exceptions.DomainException.Error">
+            <summary>
+            Gets the error.
+            </summary>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result">
+            <summary>
+            Represents a result of some operation, with status information and possibly an error.
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.#ctor(System.Boolean,Modular.Monolithic.Architecture.Helper.Domain.Errors.Error)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result"/> class with the specified parameters.
+            </summary>
+            <param name="isSuccess">The flag indicating if the result is successful.</param>
+            <param name="error">The error.</param>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.IsSuccess">
+            <summary>
+            Gets a value indicating whether the result is a success result.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.IsFailure">
+            <summary>
+            Gets a value indicating whether the result is a failure result.
+            </summary>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.Error">
+            <summary>
+            Gets the error.
+            </summary>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.Success">
+            <summary>
+            Returns a success <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result"/>.
+            </summary>
+            <returns>A new instance of <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result"/> with the success flag set.</returns>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.Success``1(``0)">
+            <summary>
+            Returns a success <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1"/> with the specified value.
+            </summary>
+            <typeparam name="TValue">The result type.</typeparam>
+            <param name="value">The result value.</param>
+            <returns>A new instance of <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1"/> with the success flag set.</returns>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.Create``1(``0,Modular.Monolithic.Architecture.Helper.Domain.Errors.Error)">
+            <summary>
+            Creates a new <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1"/> with the specified nullable value and the specified error.
+            </summary>
+            <typeparam name="TValue">The result type.</typeparam>
+            <param name="value">The result value.</param>
+            <param name="error">The error in case the value is null.</param>
+            <returns>A new instance of <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1"/> with the specified value or an error.</returns>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.Failure(Modular.Monolithic.Architecture.Helper.Domain.Errors.Error)">
+            <summary>
+            Returns a failure <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result"/> with the specified error.
+            </summary>
+            <param name="error">The error.</param>
+            <returns>A new instance of <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result"/> with the specified error and failure flag set.</returns>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.Failure``1(Modular.Monolithic.Architecture.Helper.Domain.Errors.Error)">
+            <summary>
+            Returns a failure <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1"/> with the specified error.
+            </summary>
+            <typeparam name="TValue">The result type.</typeparam>
+            <param name="error">The error.</param>
+            <returns>A new instance of <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1"/> with the specified error and failure flag set.</returns>
+            <remarks>
+            We're purposefully ignoring the nullable assignment here because the API will never allow it to be accessed.
+            The value is accessed through a method that will throw an exception if the result is a failure result.
+            </remarks>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.FirstFailureOrSuccess(Modular.Monolithic.Architecture.Helper.Domain.Results.Result[])">
+            <summary>
+            Returns the first failure from the specified <paramref name="results"/>.
+            If there is no failure, a success is returned.
+            </summary>
+            <param name="results">The results array.</param>
+            <returns>
+            The first failure from the specified <paramref name="results"/> array,or a success it does not exist.
+            </returns>
+        </member>
+        <member name="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1">
+            <summary>
+            Represents the result of some operation, with status information and possibly a value and an error.
+            </summary>
+            <typeparam name="TValue">The result value type.</typeparam>
+        </member>
+        <member name="M:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1.#ctor(`0,System.Boolean,Modular.Monolithic.Architecture.Helper.Domain.Errors.Error)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1"/> class with the specified parameters.
+            </summary>
+            <param name="value">The result value.</param>
+            <param name="isSuccess">The flag indicating if the result is successful.</param>
+            <param name="error">The error.</param>
+        </member>
+        <member name="P:Modular.Monolithic.Architecture.Helper.Domain.Results.Result`1.Value">
+            <summary>
+            Gets the result value if the result is successful, otherwise throws an exception.
+            </summary>
+            <returns>The result value if the result is successful.</returns>
+            <exception cref="T:System.InvalidOperationException"> when <see cref="P:Modular.Monolithic.Architecture.Helper.Domain.Results.Result.IsFailure"/> is true.</exception>
+        </member>
+    </members>
+</doc>
