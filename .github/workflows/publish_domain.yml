@@ -10,7 +10,7 @@ env:
   NET_VERSION: '8.x'
   PROJECT_NAME: src/Modular.Monolithic.Architecture.Helper.Domain 
   PROJECT_FILE: Modular.Monolithic.Architecture.Helper.Domain.csproj
-  RELEASE_NAME: Modular.Monolithic.Architecture.Helper.Domain
+  RELEASE_NAME: Niko_olas.ModularMonolith.Helper.Domain
   TAG_NAME: Domain
   
 jobs:
