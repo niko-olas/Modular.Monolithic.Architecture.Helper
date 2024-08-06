@@ -14,10 +14,9 @@ env:
   TAG_NAME: Domain
   
 jobs:
-  publish:
-    name: Publish on NuGet
+  build:
+    name: Publish Modular Monolithic Helper Domain on NuGet
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == vars.REPOSITORY_OWNER }}
 
     steps:
     - name: Checkout
