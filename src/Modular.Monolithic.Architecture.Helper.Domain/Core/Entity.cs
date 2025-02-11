@@ -1,4 +1,5 @@
-﻿using Modular.Monolithic.Architecture.Helper.Domain.BusinessRules;
+﻿using Modular.Monolithic.Architecture.Helper.Domain.Abstractions;
+using Modular.Monolithic.Architecture.Helper.Domain.BusinessRules;
 using Modular.Monolithic.Architecture.Helper.Domain.Events;
 using Modular.Monolithic.Architecture.Helper.Domain.Exceptions;
 
@@ -7,7 +8,7 @@ namespace Modular.Monolithic.Architecture.Helper.Domain.Core;
 /// <summary>
 /// Represents the base class that all entities derive from.
 /// </summary>
-public abstract class Entity
+public abstract class Entity : TypedIdValueBase
 {
 
     private List<IDomainEvent> _domainEvents;
@@ -16,14 +17,16 @@ public abstract class Entity
     /// Domain events occurred.
     /// </summary>
     public IReadOnlyCollection<IDomainEvent>? DomainEvents => _domainEvents?.AsReadOnly();
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Entity"/> class.
     /// </summary>
     /// <remarks>
     /// Required by EF Core.
     /// </remarks>
-    protected Entity()
+    protected Entity(Guid id) : base(id)
     {
+
     }
     /// <summary>
     /// 
