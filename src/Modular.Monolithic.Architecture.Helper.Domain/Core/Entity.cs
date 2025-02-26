@@ -1,6 +1,6 @@
 ﻿using Modular.Monolithic.Architecture.Helper.Domain.Abstractions;
 using Modular.Monolithic.Architecture.Helper.Domain.BusinessRules;
-using Modular.Monolithic.Architecture.Helper.Domain.Events;
+using Modular.Monolithic.Architecture.Helper.Domain.Events.Domain;
 using Modular.Monolithic.Architecture.Helper.Domain.Exceptions;
 
 namespace Modular.Monolithic.Architecture.Helper.Domain.Core;
