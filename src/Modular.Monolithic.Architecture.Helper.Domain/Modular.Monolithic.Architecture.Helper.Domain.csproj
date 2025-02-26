@@ -20,6 +20,9 @@
       <RepositoryUrl>https://github.com/niko-olas/Modular.Monolithic.Architecture.Helper.git</RepositoryUrl>
       <RepositoryBranch>master</RepositoryBranch>
       <PackageReadmeFile>README.md</PackageReadmeFile>
+      <AnalysisLevel>latest</AnalysisLevel>
+      <AnalysisMode>All</AnalysisMode>
+      <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <ItemGroup>
