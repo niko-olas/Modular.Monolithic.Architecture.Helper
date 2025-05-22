@@ -1,45 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-      <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
-      <ImplicitUsings>enable</ImplicitUsings>
-      <Nullable>enable</Nullable>
-      <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-      <LangVersion>latest</LangVersion>
-      <PackageId>Niko_olas.ModularMonolith.Helper.Domain</PackageId>
-      <Authors>Nicholas Gueli</Authors>
-      <Company>Nicholas Gueli</Company>
-      <Product>Library Modular Monolithic Architecture helper for domain layer</Product>
-      <Title>Library Modular Monolithic Architecture helper for domain layer</Title>
-      <Description>A small library to improve and simplify the development of applications based on the Modular Monolith architecture for domain layer</Description>
-      <PackageLicenseExpression>MIT</PackageLicenseExpression>
-      <PackageProjectUrl>https://github.com/niko-olas/Modular.Monolithic.Architecture.Helper</PackageProjectUrl>
-      <PackageIcon>Toolbox.jpeg</PackageIcon>
-      <PackageTags>csharp visualstudio aspnetcore utilities helper modular-monolithic</PackageTags>
-      <RepositoryType>git</RepositoryType>
-      <RepositoryUrl>https://github.com/niko-olas/Modular.Monolithic.Architecture.Helper.git</RepositoryUrl>
-      <RepositoryBranch>master</RepositoryBranch>
-      <PackageReadmeFile>README.md</PackageReadmeFile>
-      <AnalysisLevel>latest</AnalysisLevel>
-      <AnalysisMode>All</AnalysisMode>
-      <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <LangVersion>latest</LangVersion>
+    <PackageId>Niko_olas.ModularMonolith.Helper.Domain</PackageId>
+    <Authors>Nicholas Gueli</Authors>
+    <Company>Nicholas Gueli</Company>
+    <Product>Library Modular Monolithic Architecture helper for domain layer</Product>
+    <Title>Library Modular Monolithic Architecture helper for domain layer</Title>
+    <Description>A small library to improve and simplify the development of applications based on the Modular Monolith architecture for domain layer</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/niko-olas/Modular.Monolithic.Architecture.Helper</PackageProjectUrl>
+    <PackageIcon>Toolbox.jpeg</PackageIcon>
+    <PackageTags>csharp visualstudio aspnetcore utilities helper modular-monolithic</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/niko-olas/Modular.Monolithic.Architecture.Helper.git</RepositoryUrl>
+    <RepositoryBranch>master</RepositoryBranch>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>All</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
-    <ItemGroup>
-        <None Include="..\..\Toolbox.jpeg">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
-        <None Include="README.md" Pack="true" PackagePath="\" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Toolbox.jpeg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
-    
+
 </Project>
