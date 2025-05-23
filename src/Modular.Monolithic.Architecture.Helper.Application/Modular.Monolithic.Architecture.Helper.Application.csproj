@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Niko_olas.ModularMonolith.Helper.Application</PackageId>
+    <Product>Library Modular Monolithic Architecture helper for application layer</Product>
+    <Title>Library Modular Monolithic Architecture helper for application layer</Title>
+    <Description>A small library to improve and simplify the development of applications based on the Modular Monolith architecture for application layer</Description>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"  Version="6.0.0" />
+    <PackageReference Include="Scrutor" Version="3.3.0" />
+
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"  Version="7.0.0" />
+    <PackageReference Include="Scrutor" Version="4.2.2" />
+
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"  Version="8.0.2" />
+    <PackageReference Include="Scrutor" Version="5.1.2" />
+
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"  Version="9.0.5" />
+    <PackageReference Include="Scrutor" Version="6.0.1" />
+
+  </ItemGroup>
+
+
+</Project>

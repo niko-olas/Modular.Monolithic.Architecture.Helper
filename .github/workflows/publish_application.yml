@@ -1,0 +1,53 @@
+name: Publish Modular Monolithic Architecture Helper Domain
+ 
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'src/Modular.Monolithic.Architecture.Helper.Application/**' ]
+  workflow_dispatch:
+
+env:
+  NET_VERSION: '9.x'
+  PROJECT_NAME: src/Modular.Monolithic.Architecture.Helper.Application 
+  PROJECT_FILE: Modular.Monolithic.Architecture.Helper.Application.csproj
+  RELEASE_NAME: Niko_olas.ModularMonolith.Helper.Application
+  TAG_NAME: Domain
+  
+jobs:
+  build:
+    name: Publish Modular Monolithic Helper Application on NuGet
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+        
+    - name: Setup .NET SDK ${{ env.NET_VERSION }}
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.NET_VERSION }}
+        dotnet-quality: 'ga'
+        
+    - name: Nerdbank.GitVersioning 
+      uses: dotnet/nbgv@v0.4
+      id: nbgv
+      with:        
+        path: ${{ env.PROJECT_NAME }}
+        
+    - name: Package
+      run: dotnet pack -c Release -o . '${{ env.PROJECT_NAME }}/${{ env.PROJECT_FILE }}'
+      
+    - name: Publish on NuGet
+      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json  
+      
+    - name: Create release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          tag_name: ${{ env.TAG_NAME }}_v${{ steps.nbgv.outputs.NuGetPackageVersion }}
+          release_name: ${{ env.RELEASE_NAME }} ${{ steps.nbgv.outputs.NuGetPackageVersion }}
+          draft: false
+          prerelease: false

@@ -1,0 +1,23 @@
+@MinimalApi_HostAddress = https://localhost:7180
+
+
+POST {{MinimalApi_HostAddress}}/orders
+Content-Type: application/json
+
+[
+  {
+    "itemId": "A001",
+    "description": "Prodotto di esempio 1",
+    "price": 12.50
+  },
+  {
+    "itemId": "A002",
+    "description": "Prodotto di esempio 2",
+    "price": 7.99
+  }
+]
+###
+
+GET {{MinimalApi_HostAddress}}/orders/0196fd14-2ab6-7729-a266-da5fa46c99e5
+
+###
