@@ -1,4 +1,4 @@
-name: Publish Modular Monolithic Architecture Helper Domain
+name: Publish Modular Monolithic Architecture Helper Application
  
 on:
   push:
@@ -11,7 +11,7 @@ env:
   PROJECT_NAME: src/Modular.Monolithic.Architecture.Helper.Application 
   PROJECT_FILE: Modular.Monolithic.Architecture.Helper.Application.csproj
   RELEASE_NAME: Niko_olas.ModularMonolith.Helper.Application
-  TAG_NAME: Domain
+  TAG_NAME: Application
   
 jobs:
   build:
